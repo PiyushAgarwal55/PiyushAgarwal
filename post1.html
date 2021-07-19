@@ -27,6 +27,25 @@ padding: 3px;
 background-color: black;
 color: white;
 }
+  #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: red;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 </style>
     
 </head>
@@ -73,6 +92,29 @@ color: white;
             </div>
         </div>
     </nav>
+      <!-- back to top button -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+        //Get the button
+        var mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
 
           <!-- Posts (Alubum) Hobby -->
     <div class="container my-4">
@@ -185,7 +227,6 @@ color: white;
     </div>
 
    <footer>
-      <p class="float-end"><a href="#"> <img src="backtotop.jpg" alt="" height="40px" width="50px"> </a></p>
       <p>© 2020–2021 Piyush Agarwal, Inc· | Design & Made by- Piyush Agrawal <a href="#">Privacy</a> · <a href="#">Terms</a></p>
     </footer>
 
