@@ -129,11 +129,31 @@
         </div>
       </div> -->
     <div class="col order-5 my-3">
-      <div class="text-center">
-        <iframe
-          src="https://docs.google.com/forms/d/e/1FAIpQLSc3C8Q2pz3iwTbussclkzxpoWhJKqWG6sYUbwB6kO9uWNkPAw/viewform?embedded=true"
-          width="100%" height="809" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-      </div>
+    <h1>Contact-Us</h1>
+    <p>Fill the form</p>
+    
+        <form method="post">
+            <div class="mb-3">
+                <label for="exampleInputName1" class="form-label">Name</label>
+                <input type="text" name="username" id="user" value="" class="form-control">
+                <div id="NameHelp" class="form-text">We'll never share your details with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email</label>
+                <input type="text" name="email" id="emails" value="" class="form-control" size="30" required>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputMobileNumber1" class="form-label">MobileNumber</label>
+                <input type="text" name="mob" id="mobiles" class="form-control" value="">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Enter Your Message</label>
+                <br>
+                <textarea name="message" id="message" cols="177" rows="10" placeholder="Enter any other information here" value="" ></textarea>
+            </div>
+            <input type="submit" class="btn btn-primary" name="btn_submit" onclick="return checknull();" value="Submit">
+        </form>
+        
     </div>
     <!-- <div class="col order-1">
         <div class="text-center">
@@ -172,3 +192,33 @@
 </body>
 
 </html>
+<script>
+
+    function checknull(){
+        //alert("sdfgsdf");
+        var mess="";
+        if(document.getElementById('user').value=='')
+        {
+           //alert("sdfsdf");
+            mess+="Enter name \n";
+            //alert()
+        }
+        if(document.getElementById('emails').value=='')
+        {
+            mess+="Email \n";
+        }
+        if(document.getElementById('mobiles').value=='')
+        {
+            mess+="Mobile \n";
+        }   
+            if(mess)
+            {
+                alert("Required \n"+mess);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+    }
+ </script>
